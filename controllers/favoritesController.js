@@ -20,9 +20,8 @@ exports.index = function (req, res) {
 exports.new = function (req, res) {
   var website = new Website();
   website.name = req.body.name ? req.body.name : website.name;
-  website.gender = req.body.gender;
-  website.email = req.body.email;
-  website.phone = req.body.phone;
+  website.link = req.body.link;
+  website.rate = req.body.rate;
   // save the website and check for errors
   website.save(function (err) {
     // if (err)
