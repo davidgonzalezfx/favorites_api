@@ -47,9 +47,8 @@ exports.update = function (req, res) {
   Website.findById(req.params.website_id, function (err, website) {
     if (err) res.send(err);
     website.name = req.body.name ? req.body.name : website.name;
-    website.gender = req.body.gender;
-    website.email = req.body.email;
-    website.phone = req.body.phone;
+    website.link = req.body.link;
+    website.rate = req.body.rate;
     // save the website and check for errors
     website.save(function (err) {
       if (err) res.json(err);
