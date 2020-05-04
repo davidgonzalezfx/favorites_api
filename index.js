@@ -29,6 +29,7 @@ app.get('/', (req, res) => res.send('Hello World with Express'));
 // Use Api routes in the App
 app.use('/api', apiRoutes);
 // Launch app to listen to specified port
-app.listen(3000, function () {
-  console.log('Running favorites_API on port 3000');
+var port = process.env.PORT || 3000;
+app.listen(port, function () {
+  console.log(`Running favorites_API on port ${port}`);
 });
